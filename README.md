@@ -95,16 +95,27 @@ Set these in `.env.local` for local development and in the Netlify UI
 
 ## Deploy from GitHub to Netlify
 
-1. Push this repository to GitHub.
-2. In Netlify, **Add new site → Import an existing project**, and choose the repo.
-3. Netlify detects `netlify.toml`. Confirm:
-   - **Build command:** `npm run build`
-   - The **Next.js runtime plugin** (`@netlify/plugin-nextjs`) is applied
-     automatically from `netlify.toml`.
-4. Under **Site settings → Environment variables**, add `KIT_API_KEY`,
-   `KIT_FORM_ID`, and `NEXT_PUBLIC_SITE_URL`.
-5. Trigger a deploy. The function is available at
-   `/.netlify/functions/subscribe`.
+The code lives at
+[`Kissimoney2023/BudgetCraft-Studio-landing-page`](https://github.com/Kissimoney2023/BudgetCraft-Studio-landing-page).
+
+1. In Netlify, open (or create) the site → **Site configuration → Build & deploy
+   → Link repository**, and choose this repo on branch `main`. Netlify reads
+   `netlify.toml` and applies the Next.js runtime plugin
+   (`@netlify/plugin-nextjs`); the build command is `npm run build`.
+2. Add environment variables under **Site configuration → Environment variables**:
+
+   | Variable | Value | Secret? |
+   | --- | --- | --- |
+   | `KIT_API_KEY` | your Kit **V4** API key (Settings → Developer → API keys) | **Yes — set in Netlify only, never commit** |
+   | `KIT_FORM_ID` | `9746847` | No |
+   | `NEXT_PUBLIC_SITE_URL` | the site's public URL, no trailing slash (e.g. `https://luminous-snickerdoodle-689c6d.netlify.app`) | No |
+
+3. Make sure **site access protection is off**
+   (**Site configuration → Access & security → Visitor access → Public**) so both
+   the page and the signup function are publicly reachable — otherwise the site
+   returns `401`.
+4. Trigger a deploy. Pushes to `main` auto-deploy, and the subscribe function is
+   served at `/.netlify/functions/subscribe`.
 
 ## Scripts
 
