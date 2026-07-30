@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Brand tokens — the ONLY place raw hex values may appear in this codebase.
+ * Everything else references these through Tailwind's semantic color names
+ * (bg-background, text-foreground, bg-accent, border-secondary, ...).
+ */
+:root {
+  --background: #faf6f0; /* cream — page background, not white */
+  --foreground: #2e2a26; /* ink — all body and heading text */
+  --accent: #a84a2f; /* terracotta — buttons, rules, small emphasis (5.3:1 on cream) */
+  --muted: #ede0ce; /* warm sand — FILLS ONLY, never text (1.1:1) */
+  --secondary: #6b6f4e; /* olive — dividers, small decorative elements */
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  /* Requested smooth scroll for the hero call-to-action, disabled when the
+     visitor prefers reduced motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "liga", "kern";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Visible focus for every interactive element (WCAG 2.4.7). */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}

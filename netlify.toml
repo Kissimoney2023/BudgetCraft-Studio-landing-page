@@ -1,0 +1,20 @@
+# Netlify configuration for the Next.js (App Router) site.
+# The official Next.js runtime handles routing, SSR/ISR, and image optimization;
+# functions in netlify/functions are bundled automatically with esbuild.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Official Next.js runtime for Netlify.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[functions]
+  # TypeScript functions are bundled with esbuild.
+  node_bundler = "esbuild"
+  directory = "netlify/functions"
+
+# Environment variables are configured in the Netlify UI (or via `netlify env:set`),
+# never committed. See .env.example for the required keys:
+#   KIT_API_KEY, KIT_FORM_ID, NEXT_PUBLIC_SITE_URL
