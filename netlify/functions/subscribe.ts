@@ -156,8 +156,7 @@ export const handler: Handler = async (event) => {
       }
     }
 
-    // 2) Attach to the form. This subscription event is what a Kit Visual
-    //    Automation triggers on. The form-subscribers endpoint takes only the
+    // 2) Attach to the form. The form-subscribers endpoint takes only the
     //    email address; the subscriber is created here if step 1 was skipped.
     const attach = await fetch(
       `${KIT_API_BASE}/forms/${encodeURIComponent(formId)}/subscribers`,
@@ -172,6 +171,33 @@ export const handler: Handler = async (event) => {
       // Log the upstream status server-side; never forward Kit's body/key to the client.
       console.error(`subscribe: Kit form subscribe responded ${attach.status}`);
       return json(502, { ok: false, error: "kit_error" });
+    }
+
+    // 3) Apply the lead-magnet tag so a Kit automation can trigger on it.
+    //    NON-BLOCKING and OPTIONAL: the subscriber has already been captured on
+    //    the form above — the primary business event — so a tag failure is
+    //    logged and swallowed rather than failing the signup, and the tag can be
+    //    reconciled from the logs. Skipped entirely when KIT_TAG_ID is unset,
+    //    so signups keep working before the tag and env var are in place.
+    const tagId = process.env.KIT_TAG_ID;
+    if (tagId) {
+      try {
+        const tag = await fetch(
+          `${KIT_API_BASE}/tags/${encodeURIComponent(tagId)}/subscribers`,
+          {
+            method: "POST",
+            headers: kitHeaders,
+            body: JSON.stringify({ email_address: email }),
+            signal: controller.signal,
+          },
+        );
+        if (!tag.ok) {
+          console.error(`subscribe: Kit tag apply responded ${tag.status} (non-fatal)`);
+        }
+      } catch {
+        // Swallow tag-side network/timeout errors; the subscriber is safe.
+        console.error("subscribe: Kit tag apply failed (non-fatal)");
+      }
     }
   } catch {
     // DNS failure, timeout/abort, connection reset, etc.
