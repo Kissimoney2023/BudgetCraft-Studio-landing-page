@@ -120,7 +120,16 @@ export function SignupForm() {
       focusFirstError(mapped);
       return;
     }
-    setErrors({ form: signup.errors.generic });
+    // Map the server's non-field error codes to a helpful message. Anything
+    // unrecognized (including server_misconfigured and kit_error) stays generic
+    // so no internal detail is exposed.
+    const message =
+      data.error === "rate_limited"
+        ? signup.errors.rateLimited
+        : data.error === "upstream_unreachable"
+          ? signup.errors.unreachable
+          : signup.errors.generic;
+    setErrors({ form: message });
   }
 
   const isSubmitting = status === "submitting";

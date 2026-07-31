@@ -117,6 +117,21 @@ The code lives at
 4. Trigger a deploy. Pushes to `main` auto-deploy, and the subscribe function is
    served at `/.netlify/functions/subscribe`.
 
+### Troubleshooting the signup
+
+- **Signup shows "Something went wrong" / the function returns `kit_error`.** The
+  function reached Kit but Kit rejected the request — almost always the
+  `KIT_API_KEY`. Confirm it is the **V4** key from **Settings → Developer → API
+  keys** (used with the `X-Kit-Api-Key` header), _not_ the legacy v3 "API
+  Key/Secret" under Settings → Advanced, and that it was pasted with no stray
+  spaces or newline. After changing an env var, **redeploy** — Netlify functions
+  only pick up new values on a fresh deploy, and edge propagation can take a
+  moment.
+- **Function returns `server_misconfigured`.** `KIT_API_KEY` or `KIT_FORM_ID` is
+  missing from the deploy's environment.
+- **Whole site returns `401`.** Netlify site/team access protection is on; set
+  visitor access to Public (see step 3).
+
 ## Scripts
 
 | Command | Description |
@@ -131,6 +146,13 @@ The code lives at
 ## Before launch
 
 - Replace `public/tracker-preview.png` with the real tracker artwork.
-- Write and legally review `/privacy` and `/terms` (currently placeholders) for
-  a global audience and the services actually used (Kit, Netlify).
+- Set the real tracker download link in Kit welcome email #1 (it currently holds
+  the placeholder `REPLACE_WITH_TRACKER_DOWNLOAD_URL`).
+- **Have `/privacy` and `/terms` reviewed by a qualified professional.** They now
+  contain a general boilerplate template (in `lib/content.ts`), not final legal
+  text — confirm it against the services used (Kit, Netlify) and the law for a
+  global audience, set the governing-law jurisdiction, add real contact details,
+  and update `legal.lastUpdated`.
+- Publish the 3 draft Kit welcome emails and build the Kit Visual Automation
+  (form → tag `welcome-series` → sequence); remove test subscribers.
 - Set `NEXT_PUBLIC_SITE_URL` to the real domain.

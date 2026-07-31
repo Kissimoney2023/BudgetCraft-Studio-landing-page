@@ -64,6 +64,8 @@ export const signup = {
     consentRequired: "Please tick the box to receive the tracker.",
     generic: "Something went wrong. Please try again in a moment.",
     network: "We could not reach the server. Please check your connection and try again.",
+    rateLimited: "That is a few tries in a row. Please wait a minute and try again.",
+    unreachable: "We could not reach our email service just now. Please try again shortly.",
   },
 } as const;
 
