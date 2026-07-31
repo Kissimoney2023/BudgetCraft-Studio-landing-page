@@ -21,8 +21,8 @@ an operator action. Use a fresh, controlled address you own (a plus-address work
    - [ ] `/thank-you` renders the correct copy ("You're in" / tracker-ready message), no layout breakage, light + dark mode.
 2. **Function result** — confirm in Kit:
    - [ ] Subscriber created, `state: active`.
-   - [ ] Attached to form **9746847**.
-   - [ ] Tagged **budgetcraft-leadmagnet (21712788)**.
+   - [ ] Attached to the tracker signup form (the one whose ID is set as `KIT_FORM_ID`).
+   - [ ] Tagged **budgetcraft-leadmagnet**.
 3. **Email 1 (Day 0)** arrives:
    - [ ] Lands in Gmail **Primary** (check Promotions/Spam too, and a second provider e.g. Outlook/Apple Mail).
    - [ ] Renders on mobile + desktop, and in **dark mode** (text/background contrast holds).

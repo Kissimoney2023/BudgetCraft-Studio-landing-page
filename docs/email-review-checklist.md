@@ -72,7 +72,7 @@ Nothing here is in Kit yet. Copy is unapproved until the operator signs off (04 
 2. **Phase 1 constraint** — Day 7 introduces **no paid offer** and no product date. [ ] confirmed
 3. **Brand voice** — we/you; no founder voice; no exaggerated promises; no timeline guarantees. [ ] confirmed
 4. **Operational consistency**
-   - Trigger tag is exactly `budgetcraft-leadmagnet` (id 21712788). [ ] confirmed
+   - Trigger tag is exactly `budgetcraft-leadmagnet`. [ ] confirmed
    - Links are placeholders where required (tracker PDF, survey links). [ ] confirmed
    - Tracker references are not fabricated (no invented URL, page count matches the one-page spec). [ ] confirmed
 5. **Delays** — 0 / +1d / +2d / +2d / +2d, matching Days 0/1/3/5/7. [ ] confirmed

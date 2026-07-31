@@ -49,6 +49,21 @@ The five brand tokens are defined once as CSS custom properties in
 `bg-accent`, `border-secondary`, etc., and never contain hex values. `muted`
 (warm sand) is used for fills only, never text.
 
+## How the tracker actually gets delivered
+
+- This codebase subscribes the visitor to a Kit form. It does not send the
+  tracker. There is no attachment, no file link, and no email sent from
+  `netlify/functions/subscribe.ts` — the function's job ends once Kit has the
+  subscriber.
+- Delivery is Kit's incentive email, configured on the form inside Kit. The file
+  the subscriber receives, and the wording of the email carrying it, both live in
+  the Kit dashboard, not in this repo.
+- **Before launch, verify the incentive email fires for a subscriber created
+  through the API with `state: "active"`.** The function creates subscribers as
+  already-active (single opt-in), which skips Kit's confirmation step — confirm
+  the incentive email still sends on that path. If it does not, the thank-you
+  page promises an email that never arrives.
+
 ## Local setup
 
 Requirements: Node 18.18+ (Node 20+ recommended).
@@ -107,7 +122,7 @@ The code lives at
    | Variable | Value | Secret? |
    | --- | --- | --- |
    | `KIT_API_KEY` | your Kit **V4** API key (Settings → Developer → API keys) | **Yes — set in Netlify only, never commit** |
-   | `KIT_FORM_ID` | `9746847` | No |
+   | `KIT_FORM_ID` | the tracker signup form's numeric ID (Grow → Landing Pages & Forms) | No |
    | `NEXT_PUBLIC_SITE_URL` | the site's public URL, no trailing slash (e.g. `https://luminous-snickerdoodle-689c6d.netlify.app`) | No |
 
 3. Make sure **site access protection is off**
