@@ -106,6 +106,7 @@ Set these in `.env.local` for local development and in the Netlify UI
 | --- | --- | --- |
 | `KIT_API_KEY` | No (secret) | Kit API key. Used only by the serverless function to add subscribers. |
 | `KIT_FORM_ID` | No | ID of the Kit form new subscribers are added to. |
+| `KIT_TAG_ID` | No | Optional. ID of the lead-magnet tag applied to each new subscriber. When unset, tag application is skipped and signups still work. |
 | `NEXT_PUBLIC_SITE_URL` | Yes | Canonical public base URL, no trailing slash. Used for canonical/OG/sitemap/JSON-LD. |
 
 ## Deploy from GitHub to Netlify
