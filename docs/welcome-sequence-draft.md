@@ -31,7 +31,7 @@ There is nothing to fill in tonight. If you want to do one thing, open your bank
 
 More on how to use the page in a day or two.
 
-Quick question, only if you feel like it — how do you usually use printables like this one?
+Quick question, only if you feel like it. How do you usually use printables like this one?
 
 - I print them at home *(link → planner_format_print)*
 - I use them on my tablet *(link → planner_format_digital)*
@@ -44,7 +44,7 @@ Either click the one that fits or reply in a line.
 BudgetCraft Studio
 
 > **Ordering is a hard requirement (06 §8):** the download comes first and prominent; the survey sits below, quieter, as a closing question — never a competing button. This format survey answers the open "does she print?" question (06 §13); it is not optional.
-> **Wording note for review:** 06 §8 phrases the survey around "planners"; the tags in §9 are `planner_format_*`. Draft uses "printables like this one" to match the product. Operator to confirm wording.
+> **Survey wording:** the customer-facing question uses "printables like this one" to match the product; the tags remain `planner_format_*` (internal names, unchanged).
 
 ---
 
@@ -128,7 +128,7 @@ That is the tracker — one page, twelve categories, and whatever the totals sho
 
 There is nothing to buy here and nothing else to sign up for. One last question, and it genuinely shapes what we work on next:
 
-What would help you most next?
+What part of budgeting would you most like support with?
 
 - A complete monthly budget system *(link → wants_budget_system)*
 - A simple bill tracker *(link → wants_bill_tracker)*
@@ -143,7 +143,7 @@ Whatever you choose tells us where to put our attention. That is the only reason
 BudgetCraft Studio
 
 > **Phase 1 (06 §8, §11):** the Budget System is Phase 2 and does not exist yet, so Day 7 closes with a **product-direction survey, not an offer.** Tags: `wants_budget_system`, `wants_bill_tracker`, `wants_savings_challenge`, `wants_weekly_routine`, `wants_other`.
-> **Hard constraint:** do not imply a product is coming on a date — no "launching soon," no "watch this space." Draft avoids both; "what we work on next" is framed as validation, not a launch promise. Operator to confirm this reads as no-promise.
+> **Hard constraint:** do not imply a product is coming on a date — no "launching soon," no "watch this space." The draft avoids both; the closing question is framed as validation, not a launch promise.
 > **Phase 2 swap (future):** replace this with the offer, led by cost/effort per 04 §6 — not built here.
 
 ---

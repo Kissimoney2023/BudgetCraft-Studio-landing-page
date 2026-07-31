@@ -17,9 +17,8 @@ Nothing here is in Kit yet. Copy is unapproved until the operator signs off (04 
 - **Primary CTA:** Download your tracker (must be first and most prominent).
 - **Expected reader action:** Download the PDF; optionally answer the format survey.
 - **Links used:** `REPLACE_WITH_TRACKER_DOWNLOAD_URL` (download); 5 survey links → `planner_format_print / _digital / _computer / _elsewhere / _unknown`.
-- **Brand-voice check:** [ ] pass — plus confirm download-before-survey ordering (06 §8 hard requirement).
-- **Open item:** survey wording "printables" vs 06's "planners" — operator to confirm.
-- **Status:** Draft
+- **Brand-voice check:** [x] pass — plus confirm download-before-survey ordering (06 §8 hard requirement).
+- **Status:** Approved
 
 ## Email 2 — Day 1 — Start
 
@@ -29,8 +28,8 @@ Nothing here is in Kit yet. Copy is unapproved until the operator signs off (04 
 - **Primary CTA:** None (behavioral nudge, not a click) — "start with one category."
 - **Expected reader action:** Open banking app; fill in one category.
 - **Links used:** None.
-- **Brand-voice check:** [ ] pass
-- **Status:** Draft
+- **Brand-voice check:** [x] pass
+- **Status:** Approved
 
 ## Email 3 — Day 3 — Reflect
 
@@ -40,8 +39,8 @@ Nothing here is in Kit yet. Copy is unapproved until the operator signs off (04 
 - **Primary CTA:** Reply to the email.
 - **Expected reader action:** Reply naming the surprising category.
 - **Links used:** None (reply-based).
-- **Brand-voice check:** [ ] pass — confirm "tell us," not "tell me" (04 §1).
-- **Status:** Draft
+- **Brand-voice check:** [x] pass — confirm "tell us," not "tell me" (04 §1).
+- **Status:** Approved
 
 ## Email 4 — Day 5 — Bridge
 
@@ -51,8 +50,8 @@ Nothing here is in Kit yet. Copy is unapproved until the operator signs off (04 
 - **Primary CTA:** None (no pitch at this stage).
 - **Expected reader action:** Keep using the tracker; register the "routine" idea.
 - **Links used:** None.
-- **Brand-voice check:** [ ] pass — confirm "it is why BudgetCraft Studio exists," never "why I created" (founder voice, 04 §1); confirm no product/date implied.
-- **Status:** Draft
+- **Brand-voice check:** [x] pass — confirm "it is why BudgetCraft Studio exists," never "why I created" (founder voice, 04 §1); confirm no product/date implied.
+- **Status:** Approved
 
 ## Email 5 — Day 7 — Present (Phase 1, no offer)
 
@@ -62,8 +61,8 @@ Nothing here is in Kit yet. Copy is unapproved until the operator signs off (04 
 - **Primary CTA:** Choose a product-direction option (or reply).
 - **Expected reader action:** Click one option, or reply in words.
 - **Links used:** 5 survey links → `wants_budget_system / wants_bill_tracker / wants_savings_challenge / wants_weekly_routine / wants_other`.
-- **Brand-voice check:** [ ] pass — **critical:** must not imply a product is coming on a date (no "launching soon," "watch this space"); confirm it reads as validation, not a pitch.
-- **Status:** Draft
+- **Brand-voice check:** [x] pass — **critical:** must not imply a product is coming on a date (no "launching soon," "watch this space"); confirm it reads as validation, not a pitch.
+- **Status:** Approved
 
 ---
 
