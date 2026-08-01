@@ -358,6 +358,30 @@ Resolved: paper size — dual Letter/A4 from an 8.27 × 11 in master (§20 rule 
 
 ---
 
+### ⚠️ Citation numbering is off by one from `07` onward — verified 1 August 2026
+
+**Every `07`/`08`/`09` citation in this file points one file low.** Verified against Drive:
+there is **no `09_*` spec document in existence**. The mapping is:
+
+| This file cites | Topic | Actual owner |
+| --- | --- | --- |
+| `07` | Pin size, boards, pin volume | `08_PINTEREST_CONTENT_ENGINE.md` |
+| `08` | Blog URLs, cadence, financial-advice ban | `09_SEO_BLOG_ENGINE.md` |
+| `09` | Email sequence, sender name, automation ceiling | `10_EMAIL_MARKETING_SYSTEM.md` |
+
+`03`–`06` are correct. The drift begins at `07`, consistent with
+`07_PRODUCT_CREATION_SYSTEM.md` being inserted into the numbering later and shifting the three
+below it while these citations stayed put. `docs/welcome-sequence-draft.md` already uses the
+corrected numbering, and `docs/placeholder-dependency-report.md` records an earlier session
+hitting the same wall.
+
+**No citation in this file has been renumbered.** Doing so decides which file owns Pinterest,
+which is a §21 change rather than a typo fix — source file first, then this registry, in the
+same commit. Until then: **where this file says `09`, read `10_EMAIL_MARKETING_SYSTEM.md`.**
+The sender-name rule (§1) and the automation ceiling (§10) both live there.
+
+---
+
 ## 19. Phase 1 validation protocol
 
 **Written before the data exists, deliberately.** Interpretation rules decided in advance are the only defence against reading a story into noise at day 20.
