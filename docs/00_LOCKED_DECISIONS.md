@@ -425,10 +425,12 @@ them.
 **Written but not yet exported** — these exist; they simply have not reached this repository.
 Citations to them resolve as soon as they land:
 
-- `08_PINTEREST_CONTENT_ENGINE` — cited by this file as `07` §3/§5/§6 for pin size, boards and
-  volume
+- ~~`08_PINTEREST_CONTENT_ENGINE`~~ — **exported 1 Aug 2026** as
+  `docs/07_PINTEREST_CONTENT_ENGINE.md`. **The filename conflict is unresolved:** the file's own
+  header numbers it `07`, while `BRAND_VOICE` §0 places Pinterest at `08`. The author's header was
+  preserved rather than the table imposed. Renaming decides which file owns `07` — a §21 change.
 - `09_SEO_BLOG_ENGINE` — cited by this file as `08` §5/§7/§12 for blog URLs, cadence and the
-  financial-advice ban
+  financial-advice ban. Written; paste pending.
 
 **PLANNED, NEVER WRITTEN** — these appear in `BRAND_VOICE` §0's ownership table as intended files
 in the sequence. **They were never drafted.** They are not lost, not missing, and not pending
