@@ -405,20 +405,47 @@ into `docs/` first, then renumber and fix all citations in a single commit** whi
 set is in one place. Renumbering before the export means editing files that are about to be
 replaced.
 
-### Which spec files actually exist — verified in Drive 1 August 2026
+### Spec file status — three states, not two. Recorded 1 August 2026
 
-Present: `00_LOCKED_DECISIONS`, `03_TARGET_AUDIENCE`, `04_BRAND_VOICE`,
-`05_BRAND_VISUAL_IDENTITY`, `06_LEAD_MAGNET_SYSTEM` (**two copies — the unresolved
-duplicate**), `10_EMAIL_MARKETING_SYSTEM`, `TRACKER_CANVA_BUILD_SPEC`.
+A citation can fail for two different reasons, and they need different fixes. Do not conflate
+them.
 
-**Absent under either scheme: Pinterest, SEO blog, and product creation.** No `07_`/`08_`/`09_`
-BudgetCraft spec document exists. This file cites all three extensively — `07` §3/§5/§6 for pin
-specs, `08` §5/§7/§12 for blog rules — so **those citations currently resolve to nothing.**
-`docs/placeholder-dependency-report.md` recorded the same gap earlier.
+**Written and canonical in `docs/`:**
 
-The remaining export is therefore four files plus `10`, not eight. The duplicate
-`06_LEAD_MAGNET_SYSTEM` must be resolved before it is exported — exporting both would move the
-ambiguity into git rather than settle it.
+| File | Source |
+| --- | --- |
+| `00_LOCKED_DECISIONS` | Local — newer than both Drive copies |
+| `03_TARGET_AUDIENCE` | Drive, verified current |
+| `04_BRAND_VOICE` | Drive, verified current — owns the numbering table above |
+| `05_BRAND_VISUAL_IDENTITY` | Drive, verified current |
+| `06_LEAD_MAGNET_SYSTEM` | Local — newer than **both** Drive copies; duplicate settled by provenance |
+| `10_EMAIL_MARKETING_SYSTEM` | Drive + four corrections, flagged in its header |
+| `TRACKER_CANVA_BUILD_SPEC` | Drive |
+
+**Written but not yet exported** — these exist; they simply have not reached this repository.
+Citations to them resolve as soon as they land:
+
+- `08_PINTEREST_CONTENT_ENGINE` — cited by this file as `07` §3/§5/§6 for pin size, boards and
+  volume
+- `09_SEO_BLOG_ENGINE` — cited by this file as `08` §5/§7/§12 for blog URLs, cadence and the
+  financial-advice ban
+
+**PLANNED, NEVER WRITTEN** — these appear in `BRAND_VOICE` §0's ownership table as intended files
+in the sequence. **They were never drafted.** They are not lost, not missing, and not pending
+export; there is no document to find:
+
+- `07_PRODUCT_CREATION_SYSTEM` — would own product structure, page layouts, printable specs,
+  product naming, pricing, testing, the free/paid boundary
+- `11_AUTOMATION_WITH_CLAUDE` — would own workflow automation, session patterns, file maintenance
+
+**Neither is cited by this file for any fact**, so nothing here dangles on them — this file's
+`07` means Pinterest, per the off-by-one above. Their ownership areas are currently governed by
+whatever partial coverage exists elsewhere: pricing sits in §8 here and in `TARGET_AUDIENCE` §9,
+printable specs in `TRACKER_CANVA_BUILD_SPEC` and `VISUAL_IDENTITY` §7. **Treat those as the
+operative sources until and unless the planned files are written.** Do not stub them; an empty
+file is worse than an acknowledged gap.
+
+`docs/placeholder-dependency-report.md` recorded an earlier, coarser version of this gap.
 
 ---
 
