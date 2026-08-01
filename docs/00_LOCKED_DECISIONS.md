@@ -324,7 +324,22 @@ Severe financial crisis · investing · high-income wealth optimization · debt 
 ## 18. Open — nothing below is decided
 
 1. ~~Kit free-tier terms~~ — **closed.** Account live, v4 API key works, link-triggered tagging works.
-2. **Domain registered but suspended** — `clientHold` at Squarespace (§10). Not a purchase problem; a reactivation problem. Until the hold clears it still blocks canonical URLs, Open Graph and the sitemap. Registrant contacts are RDAP-redacted, so ownership is inferred from the 24 Feb 2026 registration date predating these specs — confirm in the Squarespace account.
+2. **Domain owned and switched off** — `clientHold` at Squarespace (§10). Neither "unregistered"
+   nor "ready." It is yours through 24 Feb 2027, and the registrar has **suspended DNS**, so
+   nothing served from it will load for anyone. Not a purchase problem; a reactivation problem.
+   Registrant contacts are RDAP-redacted, so ownership is inferred from the 24 Feb 2026
+   registration date predating these specs — confirm in the Squarespace account.
+
+   **Usual causes,** in rough order of likelihood: an unverified ICANN registrant email — which
+   clears in minutes once the link is clicked — a billing problem, or a dispute. **Check
+   Squarespace for a pending verification notice.**
+
+   **Sequencing consequence, recorded because it reorders the launch path.** Clearing
+   `clientHold` is a **prerequisite** for pointing `NEXT_PUBLIC_SITE_URL` at the real domain.
+   Until it clears, **`budgetcraft-free.netlify.app` is the correct value, not a workaround** —
+   canonical tags, Open Graph, `sitemap.xml` and `robots.txt` all derive from it, and a canonical
+   pointing at a suspended host is worse than one pointing at a working subdomain. Do not submit
+   a sitemap for the real domain or point pins at it until DNS resolves.
 3. **Prata and Work Sans in Canva** — still blocks the tracker build.
 4. ~~Kit landing page vs. site~~ — **closed.** The Next.js site is the single destination; the Kit page is being unpublished.
 5. **All copy unapproved** — `04` §9.
