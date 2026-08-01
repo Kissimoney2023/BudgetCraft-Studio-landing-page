@@ -273,6 +273,14 @@ Canva does not reliably expose OpenType tabular figures, so **set column C text 
 0.9 in width, right-aligned.** Right alignment produces visual column alignment regardless of
 figure width. Same for the grand total.
 
+**The failure mode to watch for.** Canva text boxes hug their contents by default. If the box
+is left to auto-size, "fixed 0.9 in width" silently becomes "as wide as the text," every box
+ends up a different width, and right-alignment then aligns each number to its *own* right edge
+rather than to a shared one — which looks correct in isolation and ragged down the column.
+Drag each box to width and confirm the right edges sit on x 7.77 together, rather than trusting
+the alignment setting alone. This is the entire mechanism holding the totals straight; there is
+no font feature underneath it as a fallback.
+
 ---
 
 ## 7. Two exports from one design
