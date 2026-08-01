@@ -35,7 +35,7 @@ export default function ThankYouPage() {
             {thankYou.download}
           </a>
         </Button>
-        <Button asChild size="default">
+        <Button asChild size="default" variant="outline">
           <Link href="/">{thankYou.cta}</Link>
         </Button>
       </main>
