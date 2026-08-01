@@ -11,8 +11,21 @@
 **Parent files:** `04` (voice) · `05` (visual identity) · `06` §2 (page spec)
 
 **Prerequisite:** confirm **Prata** and **Work Sans** exist in your Canva font list before
-starting. If either is missing, use the substitution criteria in `05` §4. This is a
-**stop condition** — it gates the entire build.
+starting. If either is missing, use the substitution criteria in `BRAND_VISUAL_IDENTITY` §4. This
+is a **stop condition** — it gates the entire build.
+
+### Check both faces before deciding anything — the failures are different sizes
+
+They fail independently, and only one of them threatens §4's measurement.
+
+| Outcome | Consequence |
+| --- | --- |
+| **Both present** | Build as specified. The 0.130 in clearance in §4 holds. |
+| **Prata absent, Work Sans present** | **Small.** Only the tracker title, website hero, blog titles and product covers are affected — substitute per `BRAND_VISUAL_IDENTITY` §4 (a warm high-contrast serif that is not Playfair). **§4's column measurement holds unchanged**, because it depends entirely on Work Sans. |
+| **Work Sans absent** | **Large. §4 is void and must be redone from scratch** against whatever face replaces it — regardless of Prata. Every label, instruction, column header, total and the wordmark are Work Sans, and the 2.0199 in longest-label figure is a Work Sans measurement. It is not adjustable by a ratio; re-measure. |
+
+**Report which case you are in before substituting anything.** "The font check failed" is
+ambiguous between a cosmetic swap and a rebuilt column spec.
 
 ---
 
