@@ -1,7 +1,9 @@
 # Welcome Sequence — Draft Copy
 
-**Status: DRAFT — pending operator approval.** Not published, not in Kit.
-Per the COPY APPROVAL RULE (04_BRAND_VOICE.md §9, referenced in 06_LEAD_MAGNET_SYSTEM.md), this copy is a reference candidate, not settled brand language. Do not load into Kit until approved.
+**Status: APPROVED** (operator, commit `6cb6d43`; per-email status in `docs/email-review-checklist.md`).
+**Loaded into Kit 1 Aug 2026 — sequence `2844904`, all five emails UNPUBLISHED.**
+
+Per the COPY APPROVAL RULE (04_BRAND_VOICE.md §9, referenced in 06_LEAD_MAGNET_SYSTEM.md), approval covers the wording only. Publishing and activating remain operator-only, and **must not happen until both tracker PDFs exist and the placeholder links below are replaced** — publishing now would deliver a dead link to every subscriber, which is worse than delivering nothing.
 
 **Spec of record:** 06_LEAD_MAGNET_SYSTEM.md §8 (sequence) and §9 (tagging), cross-checked against 10_EMAIL_MARKETING_SYSTEM.md §5 and 00_LOCKED_DECISIONS.md §13. Voice rules from 04_BRAND_VOICE.md. Twelve categories from 06 §3 / 00 §5.
 
@@ -9,7 +11,9 @@ Per the COPY APPROVAL RULE (04_BRAND_VOICE.md §9, referenced in 06_LEAD_MAGNET_
 
 **Sender:** BudgetCraft Studio (never "Team"). **Reply-to:** must reach a monitored inbox (Days 3 and 7 invite replies).
 
-**Placeholder:** every tracker link below is `REPLACE_WITH_TRACKER_DOWNLOAD_URL` — set once the final hosted PDF exists. Survey options marked *(link)* are link-click tags; their URLs are also placeholders.
+**Placeholder:** the Day 0 tracker links are `REPLACE_WITH_TRACKER_PRINT_PDF_URL` and `REPLACE_WITH_TRACKER_DIGITAL_PDF_URL` — set once both hosted PDFs exist. Survey options marked *(link)* are link-click tags; their URLs are also placeholders.
+
+**Two links, not one — changed 1 Aug 2026 (operator).** `00` §7 ships two files: a print PDF on white and a digital PDF on cream. A single download link cannot serve both, and forcing one would either hand a cream-ground file to someone printing it or a print file to someone annotating on a tablet. Labelling them also makes the click itself a behavioural signal about how she uses the tracker, so the Day 0 format survey is no longer the only evidence on the open "does Sarah print?" question (`00` §18.7).
 
 ---
 
@@ -21,11 +25,12 @@ Per the COPY APPROVAL RULE (04_BRAND_VOICE.md §9, referenced in 06_LEAD_MAGNET_
 
 **Body:**
 
-Here is your tracker.
+Here is your tracker. It comes in two versions — take whichever fits.
 
-[Download your tracker](REPLACE_WITH_TRACKER_DOWNLOAD_URL)
+- [Print at home](REPLACE_WITH_TRACKER_PRINT_PDF_URL) — one page, sized for Letter and A4
+- [Tablet or computer](REPLACE_WITH_TRACKER_DIGITAL_PDF_URL) — opens in GoodNotes, Notability and any PDF app
 
-It is one page. Print it on Letter or A4 paper, or open it on a tablet — either works, and there is no setup.
+Either way there is no setup.
 
 There is nothing to fill in tonight. If you want to do one thing, open your banking app and scroll back through last month. You do not need to write anything down yet. Just look.
 

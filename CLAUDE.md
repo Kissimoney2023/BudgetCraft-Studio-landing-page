@@ -10,6 +10,13 @@ The full specification lives in `docs/`. **`docs/00_LOCKED_DECISIONS.md` is the
 source of truth for every brand value, every string, and every constraint.**
 When this file and that file disagree, that file wins.
 
+**This repository is the canonical home for the specs.** Adopted 1 August 2026.
+Copies in Google Drive are archive-only and superseded — do not reconcile against
+them, and never settle "which version is real" by modification date. Authority is
+`git log`. Present in `docs/`: `00_LOCKED_DECISIONS.md`,
+`TRACKER_CANVA_BUILD_SPEC.md`. Still outstanding and not yet exported: `03`, `04`,
+`05`, `06`, `07`, `08`, `09`, `10`.
+
 ## Ground rules — read before changing anything
 
 **The specification is locked, not advisory.** Copy, colours, fonts, page
