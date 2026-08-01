@@ -358,20 +358,33 @@ Resolved: paper size — dual Letter/A4 from an 8.27 × 11 in master (§20 rule 
 
 ---
 
-### ⚠️ Two numbering schemes are in play — recorded 1 August 2026
+### ⚠️ This file's `07`/`08`/`09` citations are off by one — settled 1 August 2026
 
-**Neither scheme is wrong. They are different, and both are internally consistent.** This is
-not an error to correct; it is a divergence to decode.
+**There is one numbering scheme, and it is the ownership table in `BRAND_VOICE` §0.** That
+file explicitly owns the map, and it reads:
 
-| Cited as | Topic | Other scheme |
-| --- | --- | --- |
-| `07` | Pinterest — pin size, boards, volume | `08` |
-| `08` | SEO blog — URLs, cadence, financial-advice ban | `09` |
-| `09` | Email marketing — sequence, sender name, automation ceiling | **`10_EMAIL_MARKETING_SYSTEM.md`** |
+| File | Owns |
+| --- | --- |
+| `07_PRODUCT_CREATION_SYSTEM.md` | Product structure, printable specs, naming, pricing |
+| `08_PINTEREST_CONTENT_ENGINE.md` | Pin formats, keywords, titles, boards, frequency |
+| `09_SEO_BLOG_ENGINE.md` | Keyword research, topic clusters, internal linking |
+| `10_EMAIL_MARKETING_SYSTEM.md` | Welcome sequence, newsletter, segmentation, journey |
+| `11_AUTOMATION_WITH_CLAUDE.md` | Workflow automation, session patterns |
 
-`03` audience, `04` voice, `05` visual identity and `06` lead magnet are identical in both.
-The schemes part company at `07`, where the second inserts a product-creation file and pushes
-the three below it up by one.
+It is corroborated by the filenames that actually exist — `10_EMAIL_MARKETING_SYSTEM.md` is
+real and carries that exact name — and `BRAND_VOICE` is internally consistent with it
+throughout.
+
+**Against that map, this file's citations are one low from `07` onward:**
+
+| This file cites | Should be |
+| --- | --- |
+| `07` (pin size, boards, volume) | `08_PINTEREST_CONTENT_ENGINE` |
+| `08` (blog URLs, cadence, financial-advice ban) | `09_SEO_BLOG_ENGINE` |
+| `09` (email sequence, sender name, automation ceiling) | `10_EMAIL_MARKETING_SYSTEM` |
+
+`03`–`06` are correct. An earlier revision of this note described two co-equal schemes; that
+was wrong, and it was recorded before `BRAND_VOICE` §0 had been read.
 
 **Decoder, until citations are converted:** where this file says `09`, the artifact on disk is
 `10_EMAIL_MARKETING_SYSTEM.md`. The sender-name rule (§1) and the automation ceiling (§10)
