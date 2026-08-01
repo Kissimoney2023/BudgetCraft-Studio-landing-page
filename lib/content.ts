@@ -112,6 +112,7 @@ export const thankYou = {
     "For tonight, simply open your banking app and look through last month's spending.",
     "You don't need to calculate anything yet.",
   ],
+  download: "Download your tracker (PDF)",
   cta: "Back to Home",
 } as const;
 
