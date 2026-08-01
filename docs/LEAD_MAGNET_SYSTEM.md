@@ -1,4 +1,4 @@
-# 06_LEAD_MAGNET_SYSTEM.md
+# LEAD_MAGNET_SYSTEM.md
 
 > **CANONICAL — this repository is the single home for this file.**
 > Adopted 1 August 2026. The two copies in Google Drive are **archive-only and

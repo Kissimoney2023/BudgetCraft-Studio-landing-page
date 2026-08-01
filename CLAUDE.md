@@ -15,20 +15,33 @@ Copies in Google Drive are archive-only and superseded — do not reconcile agai
 them, and never settle "which version is real" by modification date. Authority is
 `git log`.
 
-**Cite specs by name, never by number** — `BRAND_VOICE §7`, `EMAIL_MARKETING §2`,
-not `04 §7` or `09 §2`. Two numbering schemes are in circulation and they diverge
-from `07` upward; filenames survive renumbering and numbers do not. Convert old
-numeric citations opportunistically, when you are already editing that line. Never
-run a dedicated renumbering pass — see `docs/00_LOCKED_DECISIONS.md` §18 for the
-decoder and the reasoning.
+**Spec filenames carry no numeric prefix**, by operator override of 1 August 2026
+(`docs/00_LOCKED_DECISIONS.md` §21). `00_LOCKED_DECISIONS.md` is the sole
+exception — its zero means *read first*. **Cite specs by name, never by number:**
+`BRAND_VOICE §7`, `EMAIL_MARKETING_SYSTEM §4`. Legacy numeric citations survive
+inside `00`; §18 there carries the decoder that resolves them. Convert them
+opportunistically when editing a line for another reason — never in a dedicated
+pass.
 
-In `docs/` now: `00_LOCKED_DECISIONS`, `TRACKER_CANVA_BUILD_SPEC`.
-Still in Drive, not yet exported: `TARGET_AUDIENCE`, `BRAND_VOICE`,
-`VISUAL_IDENTITY`, `LEAD_MAGNET_SYSTEM` (**two copies — resolve the duplicate
-before exporting**), `EMAIL_MARKETING`.
-**Cited but non-existent:** Pinterest, SEO blog, and product creation. No such
-document exists in Drive under either scheme, so every citation to them currently
-resolves to nothing.
+All written specs are canonical in `docs/`:
+
+```
+docs/00_LOCKED_DECISIONS.md      Registry — read first
+docs/TARGET_AUDIENCE.md          Sarah, pains, ladder, boundaries
+docs/BRAND_VOICE.md              Voice, banned lists, promise hierarchy
+docs/BRAND_VISUAL_IDENTITY.md    Colour, type, pin templates, imagery policy
+docs/LEAD_MAGNET_SYSTEM.md       Tracker, landing page, opt-in, sequencing
+docs/TRACKER_CANVA_BUILD_SPEC.md Tracker build geometry
+docs/PINTEREST_CONTENT_ENGINE.md Angles, boards, publishing, the 40-pin test
+docs/SEO_BLOG_ENGINE.md          Site structure, cadence, first six articles
+docs/EMAIL_MARKETING_SYSTEM.md   Lifecycle, automation, segmentation
+```
+
+**Planned but never written:** `PRODUCT_CREATION_SYSTEM`, `AUTOMATION_WITH_CLAUDE`.
+They appear in `BRAND_VOICE` §0's ownership table and were never drafted — do not
+search for them and do not stub them. Their areas fall back to `00` §8 and
+`TARGET_AUDIENCE` §9 for pricing, and `TRACKER_CANVA_BUILD_SPEC` plus
+`BRAND_VISUAL_IDENTITY` §7 for printable specs.
 
 ## Ground rules — read before changing anything
 

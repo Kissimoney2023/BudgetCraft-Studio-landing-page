@@ -1,15 +1,11 @@
-# 07_PINTEREST_CONTENT_ENGINE.md
+# PINTEREST_CONTENT_ENGINE.md
 
 > **CANONICAL — this repository is the single home for this file.**
 > Adopted 1 August 2026. Exported from an inline paste, **unchanged**.
 > Authority is `git log`. **Cite specs by name, not number** — `PINTEREST_CONTENT_ENGINE §6`.
 >
-> **⚠️ Filename conflict, unresolved — do not settle it silently.** This file's own header
-> numbers it `07`. The ownership table in `BRAND_VOICE` §0 — which explicitly owns the spec
-> numbering — lists `07_PRODUCT_CREATION_SYSTEM` and places Pinterest at
-> `08_PINTEREST_CONTENT_ENGINE`. The filename here preserves the author's header rather than
-> imposing the table. Renaming decides which file owns `07`, which is a `00` §21 change
-> requiring the source updated in the same commit. See `docs/00_LOCKED_DECISIONS.md` §18.
+> **Filename resolved 1 Aug 2026.** The `07` prefix is gone; numeric prefixes were
+> dropped from every spec by operator override. See `00_LOCKED_DECISIONS.md` §21.
 >
 > **No corrections applied.** Three items were flagged as stale on export and each was checked
 > against the text: §11 already reads 3.0 hr/week and already marks itself superseded; §6's

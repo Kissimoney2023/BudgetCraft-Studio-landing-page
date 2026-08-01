@@ -394,16 +394,26 @@ both live there. `docs/welcome-sequence-draft.md` already cites it by that name.
 cross-reference across the spec set points at this file's numbers; rewriting them all at once
 is a large, error-prone edit for cosmetic gain, and it is not a §21 event.
 
-### The durable fix: cite names, not numbers
+### OPERATOR OVERRIDE — numeric prefixes dropped, 1 August 2026 (§21 trigger 6)
 
-**New convention, adopted 1 August 2026.** Cite `BRAND_VOICE §7`, `EMAIL_MARKETING §2`,
-`LEAD_MAGNET_SYSTEM §8`. Filenames survive renumbering; numbers do not. Convert opportunistically
-— when a citation is being touched for another reason, convert it then. No dedicated pass.
+**Every spec filename loses its numeric prefix.** `PINTEREST_CONTENT_ENGINE.md`,
+`SEO_BLOG_ENGINE.md`, `BRAND_VOICE.md`, and so on. **`00_LOCKED_DECISIONS.md` keeps its number** —
+the zero means *read this first*, which is real information rather than ordering decoration.
 
-If a clean renumbering is ever wanted, the honest sequence is: **export every remaining spec
-into `docs/` first, then renumber and fix all citations in a single commit** while the whole
-set is in one place. Renumbering before the export means editing files that are about to be
-replaced.
+**Recorded as an override, not a refinement.** No external trigger fired; this is a deliberate
+structural decision.
+
+**Reasoning.** Name-based citation was already adopted, which made the numbers decorative — and
+they were the sole source of the `07`/`08`/`09` conflict. Removing them means `07` is unclaimed
+permanently rather than contested, and `PRODUCT_CREATION_SYSTEM` can be written later without
+renumbering anything downstream.
+
+**Consequence to be clear about: this does not retire the decoder below — it makes it
+load-bearing.** With no numbered files left, a citation reading `09 §7` no longer resolves to
+anything at all. Until this registry's own citations are converted from numbers to names, the
+decoder is the only thing that makes them readable. **Delete it when, and not before, the last
+numeric citation in this file has been converted.** Convert opportunistically, when a line is
+being edited for another reason; no dedicated pass.
 
 ### Spec file status — three states, not two. Recorded 1 August 2026
 
@@ -422,30 +432,22 @@ them.
 | `10_EMAIL_MARKETING_SYSTEM` | Drive + four corrections, flagged in its header |
 | `TRACKER_CANVA_BUILD_SPEC` | Drive |
 
-**Written but not yet exported** — these exist; they simply have not reached this repository.
-Citations to them resolve as soon as they land:
+**All seven written specs are now canonical in `docs/`:** `TARGET_AUDIENCE`, `BRAND_VOICE`,
+`BRAND_VISUAL_IDENTITY`, `LEAD_MAGNET_SYSTEM`, `PINTEREST_CONTENT_ENGINE`, `SEO_BLOG_ENGINE`,
+`EMAIL_MARKETING_SYSTEM` — plus `TRACKER_CANVA_BUILD_SPEC` and this file.
 
-- ~~`08_PINTEREST_CONTENT_ENGINE`~~ — **exported 1 Aug 2026** as
-  `docs/07_PINTEREST_CONTENT_ENGINE.md`. **The filename conflict is unresolved:** the file's own
-  header numbers it `07`, while `BRAND_VOICE` §0 places Pinterest at `08`. The author's header was
-  preserved rather than the table imposed. Renaming decides which file owns `07` — a §21 change.
-- `09_SEO_BLOG_ENGINE` — cited by this file as `08` §5/§7/§12 for blog URLs, cadence and the
-  financial-advice ban. Written; paste pending.
+**PLANNED, NEVER WRITTEN.** These appear in `BRAND_VOICE` §0's ownership table as intended files.
+**They were never drafted.** Not lost, not missing, not pending export — there is no document to
+find:
 
-**PLANNED, NEVER WRITTEN** — these appear in `BRAND_VOICE` §0's ownership table as intended files
-in the sequence. **They were never drafted.** They are not lost, not missing, and not pending
-export; there is no document to find:
+- `PRODUCT_CREATION_SYSTEM` — would own product structure, page layouts, printable specs, product
+  naming, pricing, testing, the free/paid boundary
+- `AUTOMATION_WITH_CLAUDE` — would own workflow automation, session patterns, file maintenance
 
-- `07_PRODUCT_CREATION_SYSTEM` — would own product structure, page layouts, printable specs,
-  product naming, pricing, testing, the free/paid boundary
-- `11_AUTOMATION_WITH_CLAUDE` — would own workflow automation, session patterns, file maintenance
-
-**Neither is cited by this file for any fact**, so nothing here dangles on them — this file's
-`07` means Pinterest, per the off-by-one above. Their ownership areas are currently governed by
-whatever partial coverage exists elsewhere: pricing sits in §8 here and in `TARGET_AUDIENCE` §9,
-printable specs in `TRACKER_CANVA_BUILD_SPEC` and `VISUAL_IDENTITY` §7. **Treat those as the
-operative sources until and unless the planned files are written.** Do not stub them; an empty
-file is worse than an acknowledged gap.
+Neither is cited by this file for any fact. Their areas fall back to partial coverage named
+explicitly: pricing to §8 here and `TARGET_AUDIENCE` §9; printable specs to
+`TRACKER_CANVA_BUILD_SPEC` and `BRAND_VISUAL_IDENTITY` §7. **Do not stub them** — an empty file
+reads as coverage that does not exist.
 
 `docs/placeholder-dependency-report.md` recorded an earlier, coarser version of this gap.
 

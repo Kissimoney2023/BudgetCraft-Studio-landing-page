@@ -1,4 +1,4 @@
-# 03_TARGET_AUDIENCE.md
+# TARGET_AUDIENCE.md
 
 > **CANONICAL — this repository is the single home for this file.**
 > Adopted 1 August 2026. The Google Drive copy is **archive-only and superseded**.
