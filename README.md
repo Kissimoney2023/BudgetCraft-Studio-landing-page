@@ -55,14 +55,24 @@ The five brand tokens are defined once as CSS custom properties in
   tracker. There is no attachment, no file link, and no email sent from
   `netlify/functions/subscribe.ts` — the function's job ends once Kit has the
   subscriber.
-- Delivery is Kit's incentive email, configured on the form inside Kit. The file
-  the subscriber receives, and the wording of the email carrying it, both live in
-  the Kit dashboard, not in this repo.
-- **Before launch, verify the incentive email fires for a subscriber created
-  through the API with `state: "active"`.** The function creates subscribers as
-  already-active (single opt-in), which skips Kit's confirmation step — confirm
-  the incentive email still sends on that path. If it does not, the thank-you
-  page promises an email that never arrives.
+- Delivery was intended to be Kit's incentive email, configured on the form
+  inside Kit. The file the subscriber receives, and the wording of the email
+  carrying it, both live in the Kit dashboard, not in this repo.
+- **Verified 2026-08-01: no email is sent on this path.** Six subscribers exist
+  in Kit, all `state: "active"` and all attached to the signup form, created
+  across three days. Not one of them received any email. Nothing currently
+  delivers the tracker, so `/thank-you` promises an email that never arrives.
+- The likely cause is structural, not a misconfiguration: Kit's incentive email
+  is tied to the double opt-in confirmation step. Creating a subscriber as
+  `state: "active"` marks them already confirmed, so Kit has nothing to confirm
+  and sends nothing. **Single opt-in and incentive-email delivery are mutually
+  exclusive in Kit.** Since single opt-in for everyone is a locked requirement,
+  delivery has to move off the incentive email.
+- The replacement is already specified: the Day 0 email of the five-email
+  welcome sequence hands over the tracker link, triggered by the
+  `budgetcraft-leadmagnet` tag that `subscribe.ts` already applies. That
+  automation exists in Kit but is paused with no email steps built, which is why
+  nothing sends today. Building and activating it is an operator step.
 
 ## Local setup
 
