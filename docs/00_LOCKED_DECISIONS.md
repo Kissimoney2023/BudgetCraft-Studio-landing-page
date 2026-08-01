@@ -358,27 +358,54 @@ Resolved: paper size — dual Letter/A4 from an 8.27 × 11 in master (§20 rule 
 
 ---
 
-### ⚠️ Citation numbering is off by one from `07` onward — verified 1 August 2026
+### ⚠️ Two numbering schemes are in play — recorded 1 August 2026
 
-**Every `07`/`08`/`09` citation in this file points one file low.** Verified against Drive:
-there is **no `09_*` spec document in existence**. The mapping is:
+**Neither scheme is wrong. They are different, and both are internally consistent.** This is
+not an error to correct; it is a divergence to decode.
 
-| This file cites | Topic | Actual owner |
+| Cited as | Topic | Other scheme |
 | --- | --- | --- |
-| `07` | Pin size, boards, pin volume | `08_PINTEREST_CONTENT_ENGINE.md` |
-| `08` | Blog URLs, cadence, financial-advice ban | `09_SEO_BLOG_ENGINE.md` |
-| `09` | Email sequence, sender name, automation ceiling | `10_EMAIL_MARKETING_SYSTEM.md` |
+| `07` | Pinterest — pin size, boards, volume | `08` |
+| `08` | SEO blog — URLs, cadence, financial-advice ban | `09` |
+| `09` | Email marketing — sequence, sender name, automation ceiling | **`10_EMAIL_MARKETING_SYSTEM.md`** |
 
-`03`–`06` are correct. The drift begins at `07`, consistent with
-`07_PRODUCT_CREATION_SYSTEM.md` being inserted into the numbering later and shifting the three
-below it while these citations stayed put. `docs/welcome-sequence-draft.md` already uses the
-corrected numbering, and `docs/placeholder-dependency-report.md` records an earlier session
-hitting the same wall.
+`03` audience, `04` voice, `05` visual identity and `06` lead magnet are identical in both.
+The schemes part company at `07`, where the second inserts a product-creation file and pushes
+the three below it up by one.
 
-**No citation in this file has been renumbered.** Doing so decides which file owns Pinterest,
-which is a §21 change rather than a typo fix — source file first, then this registry, in the
-same commit. Until then: **where this file says `09`, read `10_EMAIL_MARKETING_SYSTEM.md`.**
-The sender-name rule (§1) and the automation ceiling (§10) both live there.
+**Decoder, until citations are converted:** where this file says `09`, the artifact on disk is
+`10_EMAIL_MARKETING_SYSTEM.md`. The sender-name rule (§1) and the automation ceiling (§10)
+both live there. `docs/welcome-sequence-draft.md` already cites it by that name.
+
+**No citation has been renumbered, and none should be in a dedicated pass.** Every
+cross-reference across the spec set points at this file's numbers; rewriting them all at once
+is a large, error-prone edit for cosmetic gain, and it is not a §21 event.
+
+### The durable fix: cite names, not numbers
+
+**New convention, adopted 1 August 2026.** Cite `BRAND_VOICE §7`, `EMAIL_MARKETING §2`,
+`LEAD_MAGNET_SYSTEM §8`. Filenames survive renumbering; numbers do not. Convert opportunistically
+— when a citation is being touched for another reason, convert it then. No dedicated pass.
+
+If a clean renumbering is ever wanted, the honest sequence is: **export every remaining spec
+into `docs/` first, then renumber and fix all citations in a single commit** while the whole
+set is in one place. Renumbering before the export means editing files that are about to be
+replaced.
+
+### Which spec files actually exist — verified in Drive 1 August 2026
+
+Present: `00_LOCKED_DECISIONS`, `03_TARGET_AUDIENCE`, `04_BRAND_VOICE`,
+`05_BRAND_VISUAL_IDENTITY`, `06_LEAD_MAGNET_SYSTEM` (**two copies — the unresolved
+duplicate**), `10_EMAIL_MARKETING_SYSTEM`, `TRACKER_CANVA_BUILD_SPEC`.
+
+**Absent under either scheme: Pinterest, SEO blog, and product creation.** No `07_`/`08_`/`09_`
+BudgetCraft spec document exists. This file cites all three extensively — `07` §3/§5/§6 for pin
+specs, `08` §5/§7/§12 for blog rules — so **those citations currently resolve to nothing.**
+`docs/placeholder-dependency-report.md` recorded the same gap earlier.
+
+The remaining export is therefore four files plus `10`, not eight. The duplicate
+`06_LEAD_MAGNET_SYSTEM` must be resolved before it is exported — exporting both would move the
+ambiguity into git rather than settle it.
 
 ---
 

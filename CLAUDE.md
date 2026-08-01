@@ -13,9 +13,22 @@ When this file and that file disagree, that file wins.
 **This repository is the canonical home for the specs.** Adopted 1 August 2026.
 Copies in Google Drive are archive-only and superseded — do not reconcile against
 them, and never settle "which version is real" by modification date. Authority is
-`git log`. Present in `docs/`: `00_LOCKED_DECISIONS.md`,
-`TRACKER_CANVA_BUILD_SPEC.md`. Still outstanding and not yet exported: `03`, `04`,
-`05`, `06`, `07`, `08`, `09`, `10`.
+`git log`.
+
+**Cite specs by name, never by number** — `BRAND_VOICE §7`, `EMAIL_MARKETING §2`,
+not `04 §7` or `09 §2`. Two numbering schemes are in circulation and they diverge
+from `07` upward; filenames survive renumbering and numbers do not. Convert old
+numeric citations opportunistically, when you are already editing that line. Never
+run a dedicated renumbering pass — see `docs/00_LOCKED_DECISIONS.md` §18 for the
+decoder and the reasoning.
+
+In `docs/` now: `00_LOCKED_DECISIONS`, `TRACKER_CANVA_BUILD_SPEC`.
+Still in Drive, not yet exported: `TARGET_AUDIENCE`, `BRAND_VOICE`,
+`VISUAL_IDENTITY`, `LEAD_MAGNET_SYSTEM` (**two copies — resolve the duplicate
+before exporting**), `EMAIL_MARKETING`.
+**Cited but non-existent:** Pinterest, SEO blog, and product creation. No such
+document exists in Drive under either scheme, so every citation to them currently
+resolves to nothing.
 
 ## Ground rules — read before changing anything
 
