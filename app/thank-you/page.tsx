@@ -30,6 +30,12 @@ export default function ThankYouPage() {
           ))}
         </div>
         <Button asChild size="default">
+          {/* Static asset in public/ — a plain anchor, not next/link. */}
+          <a href="/where-did-my-money-go-print.pdf" download>
+            {thankYou.download}
+          </a>
+        </Button>
+        <Button asChild size="default" variant="outline">
           <Link href="/">{thankYou.cta}</Link>
         </Button>
       </main>

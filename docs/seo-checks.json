@@ -1,0 +1,41 @@
+[
+  {"category": "technical", "check": "robots.txt exists", "result": "pass", "severity": "critical", "detail": "app/robots.ts generates /robots.txt"},
+  {"category": "technical", "check": "sitemap.xml valid", "result": "pass", "severity": "critical", "detail": "app/sitemap.ts generates /sitemap.xml"},
+  {"category": "technical", "check": "HTTPS enabled", "result": "pass", "severity": "critical", "detail": "Netlify TLS"},
+  {"category": "technical", "check": "mobile-friendly (viewport)", "result": "pass", "severity": "critical", "detail": "viewport meta present"},
+  {"category": "technical", "check": "no redirect chains", "result": "pass", "severity": "high", "detail": "no redirects configured"},
+  {"category": "technical", "check": "homepage indexable", "result": "pass", "severity": "critical", "detail": "robots allow; site now public"},
+  {"category": "technical", "check": "canonical/OG base URL correct", "result": "pass", "severity": "high", "detail": "resolveSiteUrl() validates NEXT_PUBLIC_SITE_URL and falls back to the live domain; canonical/OG/sitemap/robots all emit https://budgetcraft-free.netlify.app (verified live 2026-08-03)"},
+
+  {"category": "content", "check": "no thin pages (<300 words)", "result": "fail", "severity": "low", "detail": "landing page ~109 words; intentional minimal design per spec, blog is the SEO vehicle"},
+  {"category": "content", "check": "no duplicate titles", "result": "pass", "severity": "medium", "detail": "unique title per route via template"},
+  {"category": "content", "check": "no keyword stuffing", "result": "pass", "severity": "medium"},
+  {"category": "content", "check": "readability (plain language)", "result": "pass", "severity": "low", "detail": "short sentences, plain vocabulary"},
+  {"category": "content", "check": "title/H1 match search intent", "result": "pass", "severity": "medium", "detail": "'Where Did My Money Go?' = primary keyword"},
+
+  {"category": "on_page", "check": "H1 present and unique", "result": "pass", "severity": "high", "detail": "exactly one H1"},
+  {"category": "on_page", "check": "heading hierarchy correct", "result": "pass", "severity": "medium", "detail": "H1 -> H2 -> H3 clean"},
+  {"category": "on_page", "check": "title tag 50-60 chars", "result": "warn", "severity": "medium", "detail": "44 chars (locked spec copy)"},
+  {"category": "on_page", "check": "meta description 150-160 chars", "result": "warn", "severity": "medium", "detail": "homepage 107 chars (locked spec copy)"},
+  {"category": "on_page", "check": "internal linking present", "result": "pass", "severity": "low", "detail": "3 internal links; single-funnel LP by design"},
+  {"category": "on_page", "check": "all images have alt text", "result": "pass", "severity": "medium", "detail": "1/1 images"},
+
+  {"category": "schema", "check": "JSON-LD Organization", "result": "pass", "severity": "medium", "detail": "present in @graph"},
+  {"category": "schema", "check": "JSON-LD WebSite", "result": "pass", "severity": "medium", "detail": "present in @graph"},
+  {"category": "schema", "check": "FAQPage schema", "result": "pass", "severity": "medium", "detail": "4 Q&A"},
+  {"category": "schema", "check": "breadcrumb schema", "result": "fail", "severity": "low", "detail": "none; not applicable to flat single-level site"},
+
+  {"category": "performance", "check": "LCP < 2.5s", "result": "pass", "severity": "critical", "detail": "1.9s (live Lighthouse mobile)"},
+  {"category": "performance", "check": "CLS < 0.1", "result": "pass", "severity": "high", "detail": "0"},
+  {"category": "performance", "check": "INP/TBT low", "result": "pass", "severity": "high", "detail": "TBT 30ms"},
+  {"category": "performance", "check": "Lighthouse performance 90+", "result": "pass", "severity": "high", "detail": "99 mobile"},
+
+  {"category": "ai_readiness", "check": "answer-first FAQ paragraphs", "result": "pass", "severity": "medium", "detail": "FAQ answers lead with Yes/No"},
+  {"category": "ai_readiness", "check": "entity clarity", "result": "pass", "severity": "low", "detail": "consistent brand naming"},
+  {"category": "ai_readiness", "check": "Q&A structured content", "result": "pass", "severity": "medium", "detail": "FAQPage + on-page Q&A"},
+
+  {"category": "images", "check": "all images have alt", "result": "pass", "severity": "medium", "detail": "1/1"},
+  {"category": "images", "check": "modern format served (WebP/AVIF)", "result": "pass", "severity": "low", "detail": "next/image serves AVIF/WebP"},
+  {"category": "images", "check": "lazy loading below-fold", "result": "pass", "severity": "low"},
+  {"category": "images", "check": "explicit dimensions (no CLS)", "result": "pass", "severity": "low", "detail": "width/height set; CLS 0"}
+]

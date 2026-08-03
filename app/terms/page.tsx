@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
-import { Footer } from "@/components/Footer";
+import { LegalPage } from "@/components/LegalPage";
 import { legal } from "@/lib/content";
 
 /*
- * PLACEHOLDER PAGE — no legal text has been generated.
+ * DRAFT — NOT LEGALLY REVIEWED. Reviewed copy required before launch.
  *
- * The terms of service must be written and reviewed against the actual services
- * used (Kit / ConvertKit, Netlify) and against the law applicable to a global
- * audience. Do not launch with this placeholder in place.
+ * The body is standard boilerplate (see lib/content.ts) tailored to a free
+ * lead-magnet using Kit and Netlify. It is NOT legal advice. Have it reviewed
+ * by a qualified professional, set the governing-law jurisdiction, and add real
+ * contact details, before relying on it.
  */
 
 export const metadata: Metadata = {
@@ -19,20 +19,12 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <>
-      <main className="mx-auto flex max-w-prose flex-col items-start gap-6 px-6 pb-16 pt-20 sm:pt-24">
-        <h1 className="font-display text-4xl leading-tight text-foreground sm:text-5xl">
-          {legal.terms.title}
-        </h1>
-        <p className="text-lg text-foreground/90">{legal.terms.placeholder}</p>
-        <Link
-          href="/"
-          className="text-base text-accent underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-        >
-          Back to Home
-        </Link>
-      </main>
-      <Footer />
-    </>
+    <LegalPage
+      title={legal.terms.title}
+      lastUpdated={legal.lastUpdated}
+      reviewNotice={legal.reviewNotice}
+      intro={legal.terms.intro}
+      sections={legal.terms.sections}
+    />
   );
 }

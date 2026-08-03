@@ -45,10 +45,13 @@ const KIT_TIMEOUT_MS = 10_000;
 // api.convertkit.com endpoint with an api_key body/query parameter.
 const KIT_API_BASE = "https://api.kit.com/v4";
 
-// --- Basic in-memory rate limiting ---------------------------------------
-// Best-effort only: serverless instances are ephemeral and not shared, so this
-// throttles bursts against a single warm instance rather than providing a
-// global guarantee. The honeypot handles the bulk of automated spam.
+// --- In-memory repeat-submission throttle --------------------------------
+// This is NOT rate limiting in any meaningful sense. The Map lives in one
+// serverless instance's memory: it resets on every cold start and is not
+// shared between concurrently running instances, so an attacker spreading
+// requests across instances is never counted. All it does is slow down repeat
+// submissions that happen to land on the same warm instance within the window.
+// The honeypot field is the real protection against automated signups.
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX = 5;
 const hits = new Map<string, number[]>();
@@ -136,28 +139,34 @@ export const handler: Handler = async (event) => {
   const timeout = setTimeout(() => controller.abort(), KIT_TIMEOUT_MS);
 
   try {
-    // 1) When a first name was provided, upsert the subscriber so the name is
-    //    stored for personalization. POST /v4/subscribers is keyed by email and
-    //    verified to persist first_name. Skipped entirely when no name is given.
+    // 1) Always upsert the subscriber first, with state "active". This is what
+    //    makes the opt-in single rather than double: if the subscriber does not
+    //    already exist when the form-attach call in step 2 runs, Kit creates
+    //    them and sends a confirmation email. Creating them as "active" here
+    //    first means every signup takes the same path, whether or not a first
+    //    name was given. POST /v4/subscribers is keyed by email address.
+    //    first_name is omitted from the body entirely when absent — sending an
+    //    empty string would store a blank name for personalization.
+    const upsertBody: Record<string, string> = {
+      email_address: email,
+      state: "active",
+    };
     if (firstName) {
-      const upsert = await fetch(`${KIT_API_BASE}/subscribers`, {
-        method: "POST",
-        headers: kitHeaders,
-        body: JSON.stringify({
-          email_address: email,
-          first_name: firstName,
-          state: "active",
-        }),
-        signal: controller.signal,
-      });
-      if (!upsert.ok) {
-        console.error(`subscribe: Kit /subscribers responded ${upsert.status}`);
-        return json(502, { ok: false, error: "kit_error" });
-      }
+      upsertBody.first_name = firstName;
+    }
+    const upsert = await fetch(`${KIT_API_BASE}/subscribers`, {
+      method: "POST",
+      headers: kitHeaders,
+      body: JSON.stringify(upsertBody),
+      signal: controller.signal,
+    });
+    if (!upsert.ok) {
+      console.error(`subscribe: Kit /subscribers responded ${upsert.status}`);
+      return json(502, { ok: false, error: "kit_error" });
     }
 
-    // 2) Attach to the form. The form-subscribers endpoint takes only the
-    //    email address; the subscriber is created here if step 1 was skipped.
+    // 2) Attach the (now existing, active) subscriber to the form. The
+    //    form-subscribers endpoint takes only the email address.
     const attach = await fetch(
       `${KIT_API_BASE}/forms/${encodeURIComponent(formId)}/subscribers`,
       {
