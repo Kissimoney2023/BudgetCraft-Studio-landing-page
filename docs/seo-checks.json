@@ -5,7 +5,7 @@
   {"category": "technical", "check": "mobile-friendly (viewport)", "result": "pass", "severity": "critical", "detail": "viewport meta present"},
   {"category": "technical", "check": "no redirect chains", "result": "pass", "severity": "high", "detail": "no redirects configured"},
   {"category": "technical", "check": "homepage indexable", "result": "pass", "severity": "critical", "detail": "robots allow; site now public"},
-  {"category": "technical", "check": "canonical/OG base URL correct", "result": "fail", "severity": "high", "detail": "NEXT_PUBLIC_SITE_URL unset in Netlify -> canonical/OG/sitemap emit placeholder budgetcraftstudio.com instead of the live domain"},
+  {"category": "technical", "check": "canonical/OG base URL correct", "result": "pass", "severity": "high", "detail": "resolveSiteUrl() validates NEXT_PUBLIC_SITE_URL and falls back to the live domain; canonical/OG/sitemap/robots all emit https://budgetcraft-free.netlify.app (verified live 2026-08-03)"},
 
   {"category": "content", "check": "no thin pages (<300 words)", "result": "fail", "severity": "low", "detail": "landing page ~109 words; intentional minimal design per spec, blog is the SEO vehicle"},
   {"category": "content", "check": "no duplicate titles", "result": "pass", "severity": "medium", "detail": "unique title per route via template"},
