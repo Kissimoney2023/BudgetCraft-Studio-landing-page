@@ -6,10 +6,33 @@
  * Update the specification first, then mirror it here.
  */
 
+/**
+ * Resolve the canonical site origin.
+ *
+ * Uses NEXT_PUBLIC_SITE_URL only when it is a valid absolute http(s) URL;
+ * otherwise falls back to the live domain. A malformed env value (missing
+ * scheme, stray characters) therefore degrades to the fallback instead of
+ * crashing `new URL(site.url)` at build time and failing the deploy. Set the
+ * env var to the real custom domain when one exists; a valid value takes over
+ * automatically.
+ */
+function resolveSiteUrl(): string {
+  const fallback = "https://budgetcraft-free.netlify.app";
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (!raw) return fallback;
+  try {
+    const parsed = new URL(raw);
+    if (parsed.protocol !== "https:" && parsed.protocol !== "http:") return fallback;
+    return parsed.origin;
+  } catch {
+    return fallback;
+  }
+}
+
 export const site = {
   name: "BudgetCraft Studio",
   // Used for absolute URLs (canonical, Open Graph, sitemap, JSON-LD).
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://budgetcraftstudio.com",
+  url: resolveSiteUrl(),
   seo: {
     title: "Where Did My Money Go? Free Spending Tracker",
     description:
